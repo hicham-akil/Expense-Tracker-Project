@@ -1,0 +1,3 @@
+username=expense_user
+pass=expense123
+DB_DSN = "localhost/XEPDB1"
