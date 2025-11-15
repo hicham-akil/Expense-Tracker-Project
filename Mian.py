@@ -14,8 +14,8 @@ finally:
 
 
 
-print("Adding user...")
-add_user("Hicham", "Akil", "AA123", "hicham@mail.com")
+# print("Adding user...")
+# add_user("Hicham", "Akil", "AA123", "hicham@mail.com")
 
 print("ALL USERS:")
 print(get_all_users())
@@ -34,3 +34,19 @@ delete_user(1)
 
 print("USERS AFTER DELETE:")
 print(get_all_users())
+
+
+
+from Models.Categorie_model import *
+
+# print("Adding category...")
+# add_categorie("Electronics", "Electronic devices")
+print("\nAll categories:")
+categories = show_all_categories()
+for cat in categories:
+   print(f"ID: {cat[0]}, Name: {cat[1]}, Description: {cat[2]}")
+   print("\nUpdating category...")
+   modi_categorie(1, category_name="Tech Gadgets")    
+   print("\nUpdated category:")
+   cat = show_categorie_bId(1)
+   print(f"ID: {cat[0]}, Name: {cat[1]}, Description: {cat[2]}")
