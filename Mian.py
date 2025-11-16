@@ -14,7 +14,7 @@ finally:
 
 
 
-# print("Adding user...")
+print("Adding user...")
 # add_user("Hicham", "Akil", "AA123", "hicham@mail.com")
 
 print("ALL USERS:")
@@ -30,7 +30,7 @@ print("AFTER UPDATE:")
 print(get_user_bid(1))
 
 print("DELETING...")
-delete_user(1)
+# delete_user(1)
 
 print("USERS AFTER DELETE:")
 print(get_all_users())
@@ -100,9 +100,9 @@ result = modifie_expenses(
 )
 print(f"Modify result: {result}")
 
-print("\n=== Test 6: Delete expense ===")
-result = delete_expense(expense_id=2)
-print(f"Delete result: {result}")
+# print("\n=== Test 6: Delete expense ===")
+# # result = delete_expense(expense_id=2)
+# print(f"Delete result: {result}")
 
 print("\n=== Test 7: Check remaining expenses ===")
 expenses = showallexpense_byUserId(1)
