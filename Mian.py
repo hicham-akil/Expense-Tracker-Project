@@ -39,7 +39,7 @@ print(get_all_users())
 
 from Models.Categorie_model import *
 
-# print("Adding category...")
+print("Adding category...")
 # add_categorie("Electronics", "Electronic devices")
 print("\nAll categories:")
 categories = show_all_categories()
@@ -50,3 +50,62 @@ for cat in categories:
    print("\nUpdated category:")
    cat = show_categorie_bId(1)
    print(f"ID: {cat[0]}, Name: {cat[1]}, Description: {cat[2]}")
+
+
+
+
+
+
+
+
+
+
+import datetime
+from Models.Expenses_model import *
+
+# print("=== Test 1: Adding expense ===")
+# result = add_expenses(
+#     user_id=1,
+#     category_id=2,
+#     amount=50.75,
+#     expense_date="2025-11-16",
+#     description="Lunch at restaurant"
+# )
+# print(f"Add expense result: {result}")
+
+# print("\n=== Test 2: Adding expense with datetime ===")
+# result = add_expenses(
+#     user_id=1,
+#     category_id=3,
+#     amount=100.00,
+#     expense_date=datetime.datetime.now(),
+#     description="Shopping"
+# )
+# print(f"Add expense result: {result}")
+
+print("\n=== Test 3: Show all expenses for user 1 ===")
+expenses = showallexpense_byUserId(1)
+for expense in expenses:
+    print(expense)
+
+print("\n=== Test 4: Show specific expense ===")
+expense = show_specExp_byUserId(user_id=1, expense_id=1)
+print(expense)
+
+print("\n=== Test 5: Modify expense ===")
+result = modifie_expenses(
+    expense_id=1,
+    amount=60.00,
+    description="Updated: Lunch at restaurant"
+)
+print(f"Modify result: {result}")
+
+print("\n=== Test 6: Delete expense ===")
+result = delete_expense(expense_id=2)
+print(f"Delete result: {result}")
+
+print("\n=== Test 7: Check remaining expenses ===")
+expenses = showallexpense_byUserId(1)
+print(f"Total expenses remaining: {len(expenses)}")
+for expense in expenses:
+    print(expense)
