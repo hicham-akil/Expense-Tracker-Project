@@ -109,3 +109,59 @@ expenses = showallexpense_byUserId(1)
 print(f"Total expenses remaining: {len(expenses)}")
 for expense in expenses:
     print(expense)
+
+
+
+
+from Models.income_model import *
+
+# add_income(
+#     user_id=1,
+#     source="Job Salary",
+#     amount=3500.00,
+#     income_date="2025-11-18",
+#     notes="Monthly salary"
+# )
+
+# add_income(
+#     user_id=1,
+#     source="Freelance Project",
+#     amount=800.00,
+#     income_date="2025-11-19",
+#     notes="Web app development"
+# )
+
+# Test 3 — Fetch all incomes
+print("\n2️⃣ All incomes for user 1:")
+incomes = get_all_income(1)
+for inc in incomes:
+    print(inc)
+
+# Test 4 — Get one income by ID
+print("\n3️⃣ Get income with ID 1:")
+income = get_income_by_id(1)
+print(income)
+
+# Test 5 — Update income
+print("\n4️⃣ Updating income ID 1...")
+updated = update_income(
+    income_id=1,
+    source="Updated Salary",
+    amount=3600.00,
+    income_date="2025-11-20",
+    notes="Adjusted salary"
+)
+print("Update status:", updated)
+
+# Test 6 — Show updated income
+print("\n5️⃣ After update:")
+print(get_income_by_id(1))
+
+# print("\n6️⃣ Deleting income ID 2...")
+# deleted = delete_income(2)
+# print("Delete status:", deleted)
+
+# Test 8 — Total income
+print("\n7️⃣ Total income for user 1:")
+total = get_total_income(1)
+print("Total:", total)
