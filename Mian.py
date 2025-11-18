@@ -165,3 +165,40 @@ print(get_income_by_id(1))
 print("\n7️⃣ Total income for user 1:")
 total = get_total_income(1)
 print("Total:", total)
+
+
+print("\nAdding income...")
+# add_income(
+#     user_id=1,
+#     source="Test Job",
+#     amount=1200.50,
+#     income_date="2025-11-20",
+#     notes="First test income"
+# )
+print("Income added!")
+
+print("\nAll incomes for user 1:")
+incomes = get_all_income(1)
+print(incomes)
+
+print("\nIncome ID 1:")
+print(get_income_by_id(1))
+
+print("\nUpdating income ID 1...")
+update_income(
+    income_id=1,
+    source="Updated Job",
+    amount=1500.00,
+    income_date="2025-11-21",
+    notes="Updated notes"
+)
+print("Updated!")
+print(get_income_by_id(1))
+
+print("\nTotal income for user 1:")
+print(get_total_income(1))
+
+# ➤ Delete income (optional)
+# print("\nDeleting income ID 1...")
+# delete_income(1)
+# print("Deleted!")
