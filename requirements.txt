@@ -2,3 +2,7 @@ oracledb
 pandas
 matplotlib # graphand charts
 colorama   # color cli 
+flask 
+flask-cors 
+bcrypt 
+pyjwt

@@ -11,9 +11,12 @@ CREATE TABLE users (
     prenom VARCHAR2(50) NOT NULL,
     cin VARCHAR2(50) UNIQUE NOT NULL,
     email VARCHAR2(100) NOT NULL,
+    password_hash VARCHAR2(255),
+    is_active NUMBER(1) DEFAULT 1,  
     created_at DATE DEFAULT SYSDATE
 )
 """)
+
 
 # create CATEGORIES table 
 cursor.execute("""

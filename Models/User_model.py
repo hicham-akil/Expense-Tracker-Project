@@ -15,7 +15,7 @@ def add_user(name,prenom,cin,email):
 def get_all_users():
     conn=get_connection()
     cursor=conn.cursor()
-    cursor.execute("select * From users Order by created_at")
+    cursor.execute("SELECT user_id, name, prenom, email, is_active, created_at FROM users ORDER BY created_at")
     users=cursor.fetchall()
     cursor.close()
     conn.close()
