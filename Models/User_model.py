@@ -1,16 +1,21 @@
 from dbs.db_config import get_connection
 
-def add_user(name,prenom,cin,email):
-    conn=get_connection()
-    cursor =conn.cursor()
+import bcrypt
+
+def add_user(name, prenom, cin, email, password):
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+
     cursor.execute("""
-     Insert into users(name,prenom,cin,email)
-                   values(:1,:2,:3,:4)
-""",(name,prenom,cin,email))
+        INSERT INTO users (name, prenom, cin, email, password_hash)
+        VALUES (:1, :2, :3, :4, :5)
+    """, (name, prenom, cin, email, hashed.decode()))
+
     conn.commit()
     cursor.close()
     conn.close()
-
 
 def get_all_users():
     conn=get_connection()
